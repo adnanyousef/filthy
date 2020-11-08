@@ -152,6 +152,10 @@ prompt_filthy_rprompt() {
     ci_status=$(prompt_filthy_ci_status)
   fi
 
+  if [ ! -z $DESK_NAME ]; then
+    echo -n "%F{yellow}[$DESK_NAME]%f  "
+  fi
+
   echo -n "${branch}${repo_status}${ci_status}"
 
   if [[ $FILTHY_SHOW_ZSH_VERSION -eq 1 ]]; then
