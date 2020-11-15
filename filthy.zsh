@@ -152,6 +152,10 @@ prompt_filthy_rprompt() {
     ci_status=$(prompt_filthy_ci_status)
   fi
 
+  if [ ! -z $LOAD_DOTENV_FILE ]; then
+    echo -n "%F{magenta} (.env loaded)  "
+  fi
+
   if [ ! -z $DESK_NAME ]; then
     echo -n "%F{yellow}[$DESK_NAME]%f  "
   fi
